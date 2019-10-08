@@ -41,4 +41,10 @@ p latest_version
 #p nested_versions
 
 # Find the latest version
+# from latest version, find OS architecture
+# Array of hashes => [{}, {}, {}]
+# {"name"=>"terraform", "version"=>"0.12.10", "os"=>"darwin", "arch"=>"amd64", "filename"=>"terraform_0.12.10_darwin_amd64.zip", "url"=>"https://releases.hashicorp.com/terraform/0.12.10/terraform_0.12.10_darwin_amd64.zip"}
+
+type = versions[latest_version]['builds'][0]
+p type
 
