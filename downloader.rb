@@ -6,6 +6,7 @@ uri = URI.parse("https://releases.hashicorp.com/terraform/index.json")
 response = Net::HTTP.get_response(uri)
 
 # body method will extract the whole HTTP output
+versions = JSON.parse(response.body)['versions']
 all_versions = JSON.parse(response.body)['versions'].keys
 #target_url = "https://releases.hashicorp.com/terraform/0.12.9/terraform_0.12.9_darwin_amd64.zip"
 
