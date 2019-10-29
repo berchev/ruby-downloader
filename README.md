@@ -8,7 +8,7 @@
 
 ## Supported platforms
 - MAC OS
-- All Linux platforms (no matter of different Architecture)
+- All Linux platforms any Architecture
 
 ## Requirements
 - setup of rbenv or RVM is recommended if you do not want to mess your system's gems. (I am using rbenv)
