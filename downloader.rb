@@ -7,6 +7,19 @@ require 'zip'
 require 'dir'
 require 'fileutils'
 
+############# Variables definition ###########################
+# Product you want to download
+product = "terraform"
+
+# Directory where the product will be downloaded
+tools_directory = "#{Dir.home}/hashicorp_tools"
+
+# Link to all hashicorp products in JSON format
+hashicorp_products_url = "https://releases.hashicorp.com/#{product}/index.json"
+
+bash_profile_path = "#{Dir.home}/.bash_profile"
+path_configuration = 'export PATH="$HOME/hashicorp_tools:$PATH"'
+
 ################# Modules deffinition ####################
 # Determine host OS
 module OperatingSystem
@@ -40,18 +53,6 @@ module Architecture
   end
 end
 
-############# Variables definition ###########################
-# Product you want to download
-product = "packer"
-
-# Directory where the product will be downloaded
-tools_directory = "#{Dir.home}/hashicorp_tools"
-
-# Link to all hashicorp products in JSON format
-hashicorp_products_url = "https://releases.hashicorp.com/#{product}/index.json"
-
-bash_profile_path = "#{Dir.home}/.bash_profile"
-path_configuration = 'export PATH="$HOME/hashicorp_tools:$PATH"'
 ############## Starting main program #########################
 # Start the process of filtering versions
 uri = URI.parse(hashicorp_products_url)
@@ -101,8 +102,7 @@ FileUtils.mkdir_p(tools_directory, :mode => 0755) unless Dir.exists?(tools_direc
 # Get download link content
 content = open(target_url)
 
-# Download and extract Hashicorp product into tools_directory (product will be overwritten, if already exists)
-# and add executable permissions
+# Download and extract Hashicorp product into tools_directory (product will be overwritten, if already exists) and add executable permissions
 Zip::File.open_buffer(content) do |zip|
   zip.each do |file|
     file.extract("#{tools_directory}/#{file.name}") { true }
