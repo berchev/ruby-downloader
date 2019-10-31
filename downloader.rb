@@ -1,3 +1,5 @@
+#!/usr/bin/env ruby
+
 require 'net/http'
 require 'uri'
 require 'json'
@@ -62,11 +64,10 @@ response = Net::HTTP.get_response(uri)
 versions = JSON.parse(response.body)['versions']
 all_versions = JSON.parse(response.body)['versions'].keys
 
-# Filter the stable versions only!
 # Resulted array of strings in format "x.y.z" 
 stable_versions = []
 all_versions.each do |element|
-  unless element.match("[a-zA-Z]")
+  unless element.match("[a-zA-Z]") # Filter the stable versions only!
     stable_versions.push(element)
   end
 end
