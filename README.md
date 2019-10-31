@@ -33,9 +33,9 @@
   source ~/.bash_profile
   ```
 ## TODO
-[ ] Interractive version of this script (user will be prompted to choose what to install using arrow keys)
+- [ ] Interractive version of this script (user will be prompted to choose what to install using arrow keys)
 
 ## DONE
-[x] Add links with description of rbenv and RVM
-[x] Typo fixed
-[x] Comment at line 70 has been added
+- [x] Add links with description of rbenv and RVM
+- [x] Typo fixed
+- [x] Comment at line 70 has been added
