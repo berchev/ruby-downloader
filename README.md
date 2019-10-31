@@ -28,7 +28,7 @@
   ```
   ruby downloader.rb
   ```
-- Chnages of your **$PATH** will take effect after typing of following command:
+- Changes of your **$PATH** will take effect after typing of following command:
   ```
   source ~/.bash_profile
   ```
@@ -37,3 +37,5 @@
 
 ## DONE
 [x] Add links with description of rbenv and RVM
+[x] Typo fixed
+[x] Comment at line 70 has been added
