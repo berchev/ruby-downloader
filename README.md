@@ -11,7 +11,7 @@
 - All Linux platforms any Architecture
 
 ## Requirements
-- setup of rbenv or RVM is recommended if you do not want to mess your system's gems. (I am using rbenv)
+- setup of [rbenv](https://github.com/rbenv/rbenv) or [RVM](https://rvm.io/rvm/install) is recommended if you do not want to mess your system's gems. (I am using rbenv)
 - ruby > 2.4.x
 - install required gems (http, json, rubyzip, dir, fileutils). I believe that most of them would be already installed. In case some gem is not installed: 
   ```
@@ -33,4 +33,7 @@
   source ~/.bash_profile
   ```
 ## TODO
-- interractive version of this script (user will be prompted to choose what to install using arrow keys)
+[ ] Interractive version of this script (user will be prompted to choose what to install using arrow keys)
+
+## DONE
+[x] Add links with description of rbenv and RVM
